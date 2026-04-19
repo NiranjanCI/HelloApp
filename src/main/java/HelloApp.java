@@ -8,15 +8,7 @@ public class HelloApp {
             return "Hello, World!";
         }
 
-        StringBuilder builder = new StringBuilder();
-        for (String name : args) {
-            builder.append(name).append(", ");
-        }
-
-        String names = builder.length() > 0
-                ? builder.substring(0, builder.length() - 2)
-                : "";
-
+        String names = String.join(", ", args);
         return "Hello, " + names + "!";
     }
 }
