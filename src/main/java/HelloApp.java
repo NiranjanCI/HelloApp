@@ -10,12 +10,13 @@ public class HelloApp {
 
         StringBuilder builder = new StringBuilder();
         for (String name : args) {
-            if (builder.length() > 0) {
-                builder.append(", ");
-            }
-            builder.append(name);
+            builder.append(name).append(", ");
         }
 
-        return "Hello, " + builder.toString() + "!";
+        String names = builder.length() > 0
+                ? builder.substring(0, builder.length() - 2)
+                : "";
+
+        return "Hello, " + names + "!";
     }
 }
