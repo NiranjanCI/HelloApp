@@ -1,8 +1,13 @@
 public class HelloApp {
     public static void main(String[] args) {
-        String name = "World";
-        if (args.length > 0) name = args[0];
+        String greeting = buildGreeting(args);
+        System.out.println(greeting);
+    }
 
-        System.out.println("Hello, " + name +"!");
+    private static String buildGreeting(String[] args) {
+        if (args == null || args.length == 0) {
+            return "Hello, World!";
+        }
+        return "Hello, " + String.join(", ", args) + "!";
     }
 }
